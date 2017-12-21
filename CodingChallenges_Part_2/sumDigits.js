@@ -41,14 +41,14 @@ You may need to use the following methods or operators in your solution:
 function sumOfDigits(num){
 	var divisor = 10;
 	var sum = 0;
-	while(num/divisor !== 0){
+	while(num !== 0){
 		sum += num % divisor;
 		num = Math.floor(num/divisor);
 	}
 	return sum;
 }
 
-// console.log(sumOfDigits(1234));
+console.log(sumOfDigits(1234));
 
 
 
