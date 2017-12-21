@@ -23,7 +23,7 @@ Do not count 'y' as a vowel for this challenge.
 // Write Code Below:
 
 
-
+//**************Solution 1
 
 function vowelCount(str){
 	var count = 0;
@@ -40,10 +40,22 @@ function vowelCount(str){
 // console.log(vowelCount("Angular"));
 
 
+//***************Solution 2
+
+function vowelCount(str){
+	var vowels = 'aeiou';
+	var count = 0;
+
+	for (var i = 0; i < str.length; i++){
+		if (vowels.indexOf(str[i].toLowerCase()) >= 0){
+			count++;
+		}	
+	}
+	return count;
+}
 
 
-
-
+// console.log(vowelCount("Angular"));
 
 
 
