@@ -23,13 +23,13 @@ Create a function "repeat" that accepts two arguments, the string to repeat and 
 
 function repeat(str, num){
 	var newStr = "";
-	for (var i = 0; i < num; i++){
+	for (num; num > 0; num--){
 		newStr += str;
 	}
 	return newStr;
 }
 
-// console.log(repeat("yo", 4));
+console.log(repeat("yo", 4));
 
 
 
