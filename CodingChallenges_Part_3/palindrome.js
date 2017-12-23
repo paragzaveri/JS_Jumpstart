@@ -22,22 +22,36 @@ Punctuation and numbers will not be part of the string.
 
 
 
+// function palindrome(str){
+// 	var newStr = [];
+// 	var bool = true;
+// 	for (var i = str.length -1; i >= 0; i--){
+// 		newStr.push(str[i]);
+// 	}
+// 	for (var i = 0; i < str.length; i++){
+// 		if (newStr[i] !== str[i]){
+// 			bool = false;
+// 		}
+// 	}
+// 	return bool;
+// }
+
+
+// better solution
+
+
 function palindrome(str){
-	var newStr = [];
-	var bool = true;
-	for (var i = str.length -1; i >= 0; i--){
-		newStr.push(str[i]);
-	}
 	for (var i = 0; i < str.length; i++){
-		if (newStr[i] !== str[i]){
-			bool = false;
+		if (str[i] !== str[str.length - (1+i)]){
+			return false;
+		} else {
+			return true;
 		}
 	}
-	return bool;
 }
 
-// console.log(palindrome("racecar"));
-// console.log(palindrome("animal"));
+console.log(palindrome("racecar"));
+console.log(palindrome("animal"));
 
 
 
