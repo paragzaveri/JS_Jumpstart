@@ -64,23 +64,17 @@ function findVacantRooms(array){
 }
 
 function findCheapestVacantRoom(array){
-	var cheapestRoom = [0,0];
+	var cheapestRoom = [];
+	var minimumValue = 0;
 	for (var i = 0; i < array.length; i++){
 		if (array[i] !== "occupied"){
-
-			if (cheapestRoom[1] !== 0 && array[i] <  cheapestRoom[1]){
-				cheapestRoom[0] = i;
-				cheapestRoom[1] = array[i];
-			} else if (cheapestRoom[1] === 0) {
-				cheapestRoom[0] = i;
-				cheapestRoom[1] = array[i];
+			if (minimumValue === 0 || array[i] <  minimumValue){
+				minimumValue = array[i];
 			}
 		}
-
-		if (cheapestRoom[0] === 0 && cheapestRoom[1] === 0) {
-			cheapestRoom.pop();
-			cheapestRoom.pop();
-		}
+	}
+	if (minimumValue) {
+		cheapestRoom.push(array.indexOf(minimumValue), minimumValue);
 	}
 	return cheapestRoom;
 }
@@ -90,7 +84,7 @@ function findCheapestVacantRoom(array){
 
 
 
-
+console.log(findCheapestVacantRoom(["occupied", 820, "occupied", 700, 455, 722]));
 
 
 
