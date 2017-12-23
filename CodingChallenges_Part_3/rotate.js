@@ -14,16 +14,23 @@ Notice the position of each index is shifted to the right by 3 places.
 
 
 
+// function rotate(array, num){
+//   var newArray = [];
+//   for (var i = 0; i < array.length; i++){
+//     if (num + i < array.length){
+//       newArray[i + num] = array[i];
+//     } else {
+//       newArray[i + num - array.length] = array[i];
+//     }
+//   }
+//   return newArray;
+// }
+
 function rotate(array, num){
-  var newArray = [];
-  for (var i = 0; i < array.length; i++){
-    if (num + i < array.length){
-      newArray[i + num] = array[i];
-    } else {
-      newArray[i + num - array.length] = array[i];
-    }
+  for (var i = 0; i < num; i++){
+    array.unshift(array.pop());
   }
-  return newArray;
+  return array;
 }
 
 // console.log(rotate([1,2,3,4,5,6,7], 3));
