@@ -27,30 +27,43 @@ Make sure you support an unlimited number of underscores in the input!
 
 
 
+// function underToCamel(str){
+// 	var newStr = "";
+// 	while (str.indexOf("_") !== -1){
+// 		newStr += str.slice(0 ,str.indexOf("_"));
+// 		str = str.slice(str.indexOf("_") + 1, str.length);
+
+// 		str = str.toUpperCase();
+// 		newStr += str[0]; 
+// 		str = str.slice(1,str.length);
+// 		str = str.toLowerCase();
+// 	}
+// 	newStr += str;
+// 	return newStr;
+// }
+
+
+
+
+
+// improved solution
+
 function underToCamel(str){
 	var newStr = "";
-	while (str.indexOf("_") !== -1){
-		newStr += str.slice(0 ,str.indexOf("_"));
-		str = str.slice(str.indexOf("_") + 1, str.length);// good
-
-		str = str.toUpperCase();
-		newStr += str[0];
-		str = str.slice(1,str.length);
-		str = str.toLowerCase();
+	var bool = false;
+	for (var i = 0; i < str.length; i++){
+		if (str[i] !== "_"){
+			newStr += str[i];
+		} else {
+			newStr += str[++i].toUpperCase();
+		}
 	}
-	newStr += str;
 	return newStr;
 }
 
+
 // console.log(underToCamel("first_name"));
 // console.log(underToCamel("my_income_tax_from_2015"));
-
-
-
-
-
-
-
 
 
 
